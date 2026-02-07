@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>marzz — Enterprise VPS & Panel</title>
+  <meta name="description" content="marzz — Penjual VPS, Panel Pterodactyl, dan Bot Telegram dengan gaya enterprise.">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <!-- Ambient -->
+  <div class="ambient">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand" role="button" tabindex="0" data-nav="home">
+      <div class="brand-mark"></div>
+      <div class="brand-text">
+        <div class="brand-title">marzz</div>
+        <div class="brand-sub">Enterprise Store</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-pill is-active" data-nav="home">Home</button>
+      <button class="nav-pill" data-nav="vps">VPS</button>
+      <button class="nav-pill" data-nav="panel">Panel</button>
+      <button class="nav-pill" data-nav="about">About</button>
+    </nav>
+
+    <div class="top-actions">
+      <button class="btn ghost" id="themeBtn" title="Ganti Tema">
+        <span class="icon">◐</span>
+        <span class="txt">Theme</span>
+      </button>
+      <button class="btn primary" id="ctaBtn">
+        <span class="icon">⚡</span>
+        <span class="txt">Mulai Order</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <main class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title">QUICK</div>
+
+        <button class="side-item is-current" data-nav="home">
+          <span class="dot"></span>
+          <span>Dashboard</span>
+        </button>
+        <button class="side-item" data-nav="vps">
+          <span class="dot"></span>
+          <span>VPS Packages</span>
+        </button>
+        <button class="side-item" data-nav="panel">
+          <span class="dot"></span>
+          <span>Panel Hosting</span>
+        </button>
+        <button class="side-item" data-nav="about">
+          <span class="dot"></span>
+          <span>About & FAQ</span>
+        </button>
+
+        <div class="divider"></div>
+
+        <a class="side-link" href="https://t.me/marzzXD" target="_blank" rel="noopener">
+          <span class="chip chip-green"></span>
+          Telegram Support
+        </a>
+      </div>
+
+      <div class="status-card">
+        <div class="status-head">
+          <div class="status-led"></div>
+          <div>
+            <div class="status-title">Status</div>
+            <div class="status-sub">Online • Fast Response</div>
+          </div>
+        </div>
+        <div class="status-metrics">
+          <div class="metric">
+            <div class="k">Latency</div>
+            <div class="v"><span id="latencyText">~</span> ms</div>
+          </div>
+          <div class="metric">
+            <div class="k">Uptime</div>
+            <div class="v">99.9%</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <section class="content">
+      <!-- PAGE: HOME -->
+      <div class="page is-visible" id="page-home" data-page="home">
+        <div class="hero">
+          <div class="hero-left">
+            <div class="badge">
+              <span class="badge-dot"></span>
+              <span>Dark Blue Enterprise • Premium UI</span>
+            </div>
+
+            <h1 class="h1">
+              Solusi <span class="accent">VPS & Panel</span> yang terlihat serius,
+              cepat, dan siap dipakai untuk bisnis online kamu.
+            </h1>
+
+            <p class="lead">
+              Saya <b>marzz</b> — penjual online yang fokus di layanan <b>VPS</b>, <b>Panel Pterodactyl</b>,
+              dan <b>Bot Telegram</b>. Bukan sekadar “jual hosting”, tapi bantu kamu punya sistem yang rapi,
+              stabil, dan pantas dipakai untuk project yang kamu bawa serius.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn primary" data-open-order="vps">
+                <span class="icon">🛰️</span><span class="txt">Order VPS</span>
+              </button>
+              <button class="btn soft" data-open-order="panel">
+                <span class="icon">🧩</span><span class="txt">Order Panel</span>
+              </button>
+              <button class="btn ghost" data-nav="about">
+                <span class="icon">✦</span><span class="txt">Lihat Profil</span>
+              </button>
+            </div>
+
+            <div class="trust">
+              <div class="trust-item">
+                <div class="trust-big">Instan</div>
+                <div class="trust-sub">Proses cepat, alur jelas.</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-big">Rapi</div>
+                <div class="trust-sub">Struktur layanan tertata.</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-big">Support</div>
+                <div class="trust-sub">Respon Telegram.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="glass-panel">
+              <div class="panel-head">
+                <div class="panel-title">LIVE STATUS</div>
+                <div class="panel-chip"><span class="bolt">⚡</span> READY</div>
+              </div>
+
+              <div class="panel-body">
+                <div class="kv">
+                  <div class="k">CPU</div>
+                  <div class="v"><span class="pulse"></span> Stable</div>
+                </div>
+                <div class="kv">
+                  <div class="k">RAM</div>
+                  <div class="v"><span class="pulse"></span> Optimal</div>
+                </div>
+                <div class="kv">
+                  <div class="k">DISK</div>
+                  <div class="v"><span class="pulse"></span> NVMe Ready</div>
+                </div>
+                <div class="kv">
+                  <div class="k">NETWORK</div>
+                  <div class="v"><span class="pulse"></span> Online</div>
+                </div>
+
+                <div class="mini">
+                  <div class="mini-title">Kenapa terlihat enterprise?</div>
+                  <p class="mini-text">
+                    Karena desain bukan cuma “bagus”, tapi juga <b>membuat orang percaya</b>.
+                    Website kamu harus terasa solid, informatif, dan punya alur order yang jelas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="panel-foot">
+                <button class="btn tiny" data-nav="vps">Lihat Paket VPS</button>
+                <button class="btn tiny ghost" data-nav="panel">Lihat Panel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2 class="h2">Apa yang kamu dapat?</h2>
+            <p class="muted">
+              Ini bukan halaman “jualan pendek”. Kamu dapat penjelasan, opsi paket, dan rasa UI yang modern.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon">🛡️</div>
+              <h3>Stabil untuk kerja serius</h3>
+              <p>
+                Cocok untuk bot Telegram, API backend, monitoring, panel hosting,
+                sampai sistem store kamu sendiri. Fokusnya: stabil & bisa dipakai jangka panjang.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">⚙️</div>
+              <h3>Rapi & mudah di-maintain</h3>
+              <p>
+                Layanan disusun biar kamu gak bingung: jelas paketnya, jelas fungsinya,
+                dan gampang pilih sesuai kebutuhan (bukan asal besar RAM).
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">💬</div>
+              <h3>Support Telegram</h3>
+              <p>
+                Kalau kamu butuh arahan atau penyesuaian, tinggal chat. Bukan yang “ghosting”.
+                Ini penting untuk orang yang benar-benar deploy project.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="section compact">
+          <div class="split">
+            <div class="split-left">
+              <h2 class="h2">Paket ringkas yang padat (preview)</h2>
+              <p class="muted">
+                Kamu bisa klik menu VPS/Panel untuk halaman detail. Ini hanya preview biar website terasa “penuh”.
+              </p>
+            </div>
+            <div class="split-right">
+              <div class="pill-row">
+                <span class="pill">VPS Singapore</span>
+                <span class="pill">Panel Pterodactyl</span>
+                <span class="pill">Bot Telegram</span>
+                <span class="pill">Fast Response</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-grid">
+            <div class="price-card">
+              <div class="price-top">
+                <div class="price-name">VPS Starter</div>
+                <div class="price-tag">Best for bot</div>
+              </div>
+              <div class="price">
+                <span class="rp">Rp</span> 35K <span class="per">/bulan</span>
+              </div>
+              <ul class="list">
+                <li>1 vCPU • 1GB RAM</li>
+                <li>NVMe SSD • Uptime 99.9%</li>
+                <li>Support Telegram</li>
+              </ul>
+              <button class="btn primary full" data-open-order="vps">Order VPS</button>
+            </div>
+
+            <div class="price-card featured">
+              <div class="shine"></div>
+              <div class="price-top">
+                <div class="price-name">Panel Premium</div>
+                <div class="price-tag">Most chosen</div>
+              </div>
+              <div class="price">
+                <span class="rp">Rp</span> 15K <span class="per">/bulan</span>
+              </div>
+              <ul class="list">
+                <li>Pterodactyl Panel Hosting</li>
+                <li>Siap deploy node & bot</li>
+                <li>Kelola server lebih rapi</li>
+              </ul>
+              <button class="btn soft full" data-open-order="panel">Order Panel</button>
+            </div>
+
+            <div class="price-card">
+              <div class="price-top">
+                <div class="price-name">VPS Pro</div>
+                <div class="price-tag">For production</div>
+              </div>
+              <div class="price">
+                <span class="rp">Rp</span> 75K <span class="per">/bulan</span>
+              </div>
+              <ul class="list">
+                <li>2 vCPU • 2GB RAM</li>
+                <li>NVMe SSD • Monitoring</li>
+                <li>Lebih stabil untuk traffic</li>
+              </ul>
+              <button class="btn primary full" data-open-order="vps">Order VPS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE: VPS -->
+      <div class="page" id="page-vps" data-page="vps">
+        <div class="page-head">
+          <div class="page-title">
+            <h2 class="h2">VPS Packages</h2>
+            <p class="muted">
+              VPS itu fondasi. Kalau fondasinya kuat, bot dan panel kamu jadi tenang.
+              Pilih paket bukan cuma “RAM besar”, tapi sesuai kebutuhan penggunaan.
+            </p>
+          </div>
+          <div class="page-actions">
+            <button class="btn ghost" data-nav="panel">Lihat Panel</button>
+            <button class="btn primary" data-open-order="vps">Order VPS</button>
+          </div>
+        </div>
+
+        <div class="info-strip">
+          <div class="strip-item">
+            <div class="k">Lokasi</div>
+            <div class="v">Singapore / Asia</div>
+          </div>
+          <div class="strip-item">
+            <div class="k">Storage</div>
+            <div class="v">NVMe SSD</div>
+          </div>
+          <div class="strip-item">
+            <div class="k">Kegunaan</div>
+            <div class="v">Bot, Panel, API, Web</div>
+          </div>
+          <div class="strip-item">
+            <div class="k">Support</div>
+            <div class="v">Telegram</div>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card">
+            <div class="price-top">
+              <div class="price-name">Starter</div>
+              <div class="price-tag">Bot Telegram</div>
+            </div>
+            <div class="price"><span class="rp">Rp</span> 35K <span class="per">/bulan</span></div>
+            <p class="desc">
+              Cocok untuk bot Telegram basic, uptime stabil, dan project awal.
+              Kalau kamu baru mulai jualan bot / panel, paket ini paling aman.
+            </p>
+            <ul class="list">
+              <li>1 vCPU • 1GB RAM</li>
+              <li>NVMe SSD • IPv4 Ready</li>
+              <li>Setup guidance via Telegram</li>
+            </ul>
+            <button class="btn primary full" data-open-order="vps" data-plan="Starter">Order Starter</button>
+          </div>
+
+          <div class="price-card featured">
+            <div class="shine"></div>
+            <div class="price-top">
+              <div class="price-name">Business</div>
+              <div class="price-tag">Most stable</div>
+            </div>
+            <div class="price"><span class="rp">Rp</span> 75K <span class="per">/bulan</span></div>
+            <p class="desc">
+              Untuk bot yang lebih aktif, API kecil, atau panel yang mulai ramai.
+              Ini paket paling “balance” untuk pemakaian sehari-hari.
+            </p>
+            <ul class="list">
+              <li>2 vCPU • 2GB RAM</li>
+              <li>NVMe SSD • Monitoring</li>
+              <li>Lebih kuat untuk traffic</li>
+            </ul>
+            <button class="btn soft full" data-open-order="vps" data-plan="Business">Order Business</button>
+          </div>
+
+          <div class="price-card">
+            <div class="price-top">
+              <div class="price-name">Power</div>
+              <div class="price-tag">Production</div>
+            </div>
+            <div class="price"><span class="rp">Rp</span> 140K <span class="per">/bulan</span></div>
+            <p class="desc">
+              Untuk yang benar-benar production: panel ramai, multi-bot, atau layanan hosting kecil.
+              Fokus: long run, bukan coba-coba.
+            </p>
+            <ul class="list">
+              <li>4 vCPU • 4GB RAM</li>
+              <li>NVMe SSD • Headroom besar</li>
+              <li>Ideal untuk multi-service</li>
+            </ul>
+            <button class="btn primary full" data-open-order="vps" data-plan="Power">Order Power</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h3 class="h3">Catatan pemilihan paket (biar gak salah beli)</h3>
+            <p class="muted">
+              Banyak orang asal pilih. Padahal “yang tepat” itu yang sesuai beban kerja.
+              Ini guideline biar kamu terlihat paham saat jualan / deploy.
+            </p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon">🧠</div>
+              <h3>Bot kecil ≠ butuh server besar</h3>
+              <p>
+                Bot Telegram sederhana lebih butuh stabilitas dan jaringan bagus daripada RAM besar.
+                Upgrade saat memang sudah ada user/traffic.
+              </p>
+            </article>
+            <article class="card">
+              <div class="card-icon">📦</div>
+              <h3>Panel itu bukan cuma “install”</h3>
+              <p>
+                Panel akan terasa berat kalau kamu menjalankan banyak node / banyak container.
+                Pilih VPS yang punya ruang untuk tumbuh.
+              </p>
+            </article>
+            <article class="card">
+              <div class="card-icon">🔒</div>
+              <h3>Keamanan = kebiasaan</h3>
+              <p>
+                Password kuat, update rutin, dan tidak asal buka port.
+                Kalau butuh arahan, tinggal chat Telegram.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE: PANEL -->
+      <div class="page" id="page-panel" data-page="panel">
+        <div class="page-head">
+          <div class="page-title">
+            <h2 class="h2">Panel Hosting</h2>
+            <p class="muted">
+              Panel Pterodactyl membuat pengelolaan bot & service jadi rapi: start/stop, monitoring,
+              dan manajemen resource. Cocok untuk kamu yang ingin terlihat profesional.
+            </p>
+          </div>
+          <div class="page-actions">
+            <button class="btn ghost" data-nav="vps">Lihat VPS</button>
+            <button class="btn primary" data-open-order="panel">Order Panel</button>
+          </div>
+        </div>
+
+        <div class="info-strip">
+          <div class="strip-item">
+            <div class="k">Use Case</div>
+            <div class="v">Bot Telegram • Node App</div>
+          </div>
+          <div class="strip-item">
+            <div class="k">Benefit</div>
+            <div class="v">Manajemen rapi</div>
+          </div>
+          <div class="strip-item">
+            <div class="k">Control</div>
+            <div class="v">Start/Stop/Logs</div>
+          </div>
+          <div class="strip-item">
+            <div class="k">Support</div>
+            <div class="v">Telegram</div>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card featured">
+            <div class="shine"></div>
+            <div class="price-top">
+              <div class="price-name">Panel Premium</div>
+              <div class="price-tag">Most chosen</div>
+            </div>
+            <div class="price"><span class="rp">Rp</span> 15K <span class="per">/bulan</span></div>
+            <p class="desc">
+              Untuk kamu yang pengen deploy bot dan aplikasi tanpa ribet.
+              Tampilan panel rapi, alur penggunaan jelas, dan cocok buat pemula maupun yang sudah jalan.
+            </p>
+            <ul class="list">
+              <li>Kelola server dengan UI modern</li>
+              <li>Monitoring resource lebih jelas</li>
+              <li>Lebih gampang scale saat ramai</li>
+            </ul>
+            <button class="btn soft full" data-open-order="panel" data-plan="Panel Premium">Order Panel Premium</button>
+          </div>
+
+          <div class="price-card">
+            <div class="price-top">
+              <div class="price-name">Panel + Setup</div>
+              <div class="price-tag">Guided</div>
+            </div>
+            <div class="price"><span class="rp">Rp</span> 25K <span class="per">/bulan</span></div>
+            <p class="desc">
+              Kamu bukan cuma dapat panel, tapi juga arahan setup penggunaan yang rapi.
+              Cocok kalau kamu ingin langsung jalan tanpa trial-error.
+            </p>
+            <ul class="list">
+              <li>Panel + arahan penggunaan</li>
+              <li>Best practice dasar</li>
+              <li>Support via Telegram</li>
+            </ul>
+            <button class="btn primary full" data-open-order="panel" data-plan="Panel + Setup">Order Panel + Setup</button>
+          </div>
+
+          <div class="price-card">
+            <div class="price-top">
+              <div class="price-name">Panel Business</div>
+              <div class="price-tag">For reseller</div>
+            </div>
+            <div class="price"><span class="rp">Rp</span> 45K <span class="per">/bulan</span></div>
+            <p class="desc">
+              Untuk yang ingin jualan panel, butuh pengelolaan lebih rapi, dan siap handle user lebih banyak.
+              Fokus: stabil dan tampak profesional.
+            </p>
+            <ul class="list">
+              <li>Untuk penggunaan lebih ramai</li>
+              <li>Lebih cocok buat reseller</li>
+              <li>Prioritas support</li>
+            </ul>
+            <button class="btn primary full" data-open-order="panel" data-plan="Panel Business">Order Panel Business</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h3 class="h3">Kenapa panel bikin kamu terlihat “serius”?</h3>
+            <p class="muted">
+              Karena customer suka yang rapi. Panel itu “dashboard” yang bikin layanan kamu kelihatan enterprise.
+              Ini poin yang biasanya bikin orang trust.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon">🧾</div>
+              <h3>Manajemen jelas</h3>
+              <p>
+                Kamu bisa kelola bot/app seperti produk beneran: ada log, ada kontrol, ada batas resource.
+                Ini yang membedakan “yang asal jalan” vs “yang siap scale”.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📈</div>
+              <h3>Siap bertumbuh</h3>
+              <p>
+                Saat user bertambah, kamu gak panik. Panel bantu kamu mengatur server dan service
+                tanpa harus SSH terus-terusan.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">✨</div>
+              <h3>Lebih profesional</h3>
+              <p>
+                Untuk jualan, impresi itu penting. UI yang rapi dan flow yang jelas
+                bikin orang percaya kamu ngerti apa yang kamu jual.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE: ABOUT -->
+      <div class="page" id="page-about" data-page="about">
+        <div class="page-head">
+          <div class="page-title">
+            <h2 class="h2">About marzz</h2>
+            <p class="muted">
+              Profil singkat, tapi tetap berkelas. Kalau kamu ingin tampil premium,
+              cara kamu menjelaskan layanan harus terasa matang.
+            </p>
+          </div>
+          <div class="page-actions">
+            <a class="btn ghost" href="https://t.me/marzzXD" target="_blank" rel="noopener">Telegram</a>
+            <button class="btn primary" data-open-order="vps">Mulai dari VPS</button>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card big">
+            <div class="about-kicker">marzz STORE • DIGITAL SERVICES</div>
+            <h3 class="h3">Saya jual layanan yang fokus ke performa & impresi.</h3>
+            <p class="muted">
+              Saya membantu orang yang ingin punya layanan VPS, Panel Pterodactyl, dan sistem bot Telegram
+              dengan alur yang jelas dan tampilan yang pantas. Fokus saya bukan cuma “bisa jalan”,
+              tapi juga rapi untuk jangka panjang.
+            </p>
+
+            <div class="about-points">
+              <div class="point">
+                <div class="p-ico">🧠</div>
+                <div>
+                  <div class="p-title">Konsultasi ringan</div>
+                  <div class="p-sub">Biar kamu gak salah pilih paket.</div>
+                </div>
+              </div>
+              <div class="point">
+                <div class="p-ico">🛰️</div>
+                <div>
+                  <div class="p-title">Layanan core</div>
+                  <div class="p-sub">VPS + Panel + Bot Telegram.</div>
+                </div>
+              </div>
+              <div class="point">
+                <div class="p-ico">🛡️</div>
+                <div>
+                  <div class="p-title">Cara kerja rapi</div>
+                  <div class="p-sub">Alur order jelas & support tersedia.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <h3 class="h3">FAQ singkat (tapi jelas)</h3>
+            <div class="faq">
+              <details open>
+                <summary>Kalau saya pemula, aman mulai dari mana?</summary>
+                <p>
+                  Mulai dari VPS Starter atau Panel Premium. Tujuannya biar kamu paham alurnya dulu.
+                  Nanti kalau usage naik, tinggal upgrade.
+                </p>
+              </details>
+              <details>
+                <summary>Bedanya VPS vs Panel?</summary>
+                <p>
+                  VPS itu servernya (fondasi). Panel itu dashboard untuk kelola service.
+                  Kalau kamu pengen rapi dan profesional, panel bikin manajemen jauh lebih enak.
+                </p>
+              </details>
+              <details>
+                <summary>Support-nya lewat mana?</summary>
+                <p>
+                  Telegram: <b>t.me/marzzXD</b>. Kamu bisa tanya kebutuhan, rekomendasi paket, atau arahan dasar.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <div class="section compact">
+          <div class="cta-wide">
+            <div>
+              <div class="cta-title">Siap bikin layanan kamu terlihat enterprise?</div>
+              <div class="cta-sub">
+                Pilih VPS untuk fondasi, lalu tambah panel untuk manajemen yang rapi. Ini kombinasi yang paling sering dipakai.
+              </div>
+            </div>
+            <div class="cta-actions">
+              <button class="btn primary" data-open-order="vps">Order VPS</button>
+              <button class="btn soft" data-open-order="panel">Order Panel</button>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>© 2026 marzz • Dark Blue Enterprise UI</div>
+          <a href="https://t.me/marzzXD" target="_blank" rel="noopener">Telegram</a>
+        </footer>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ORDER MODAL -->
+  <div class="modal hidden" id="orderModal" aria-hidden="true">
+    <div class="modal-bg" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div>
+          <div class="modal-kicker" id="modalKicker">ORDER</div>
+          <div class="modal-title" id="modalTitle">Order</div>
+        </div>
+        <button class="icon-btn" data-close title="Tutup">✕</button>
+      </div>
+
+      <p class="modal-desc" id="modalDesc"></p>
+
+      <div class="modal-grid">
+        <div class="modal-card">
+          <div class="mc-title">Spesifikasi & Benefit</div>
+          <ul class="modal-list" id="modalList"></ul>
+        </div>
+        <div class="modal-card">
+          <div class="mc-title">Catatan penting</div>
+          <p class="mc-text" id="modalNote"></p>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <a class="btn primary full" id="modalTelegram" href="https://t.me/marzzXD" target="_blank" rel="noopener">
+          <span class="icon">💬</span><span class="txt">Lanjut Order via Telegram</span>
+        </a>
+        <button class="btn ghost full" data-close>
+          <span class="icon">↩</span><span class="txt">Kembali</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
